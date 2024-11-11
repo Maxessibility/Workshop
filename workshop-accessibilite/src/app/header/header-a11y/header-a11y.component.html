@@ -1,14 +1,22 @@
-<div class="header" style="background-color: #cccccc; padding: 10px;">
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Mon Workshop</a>
-            <a class="nav-link" href="/" [attr.aria-current]="isAriaCurrentPage('/accueil') ? 'page' : null">Accueil</a>
-            <a class="nav-link" href="/page1" style="color: #999999;" [attr.aria-current]="isAriaCurrentPage('/page1') ? 'page' : null">Formulaire</a>
-            <a class="nav-link" href="/page2"><i class="bi bi-envelope" [attr.aria-current]="isAriaCurrentPage('/page2') ? 'page' : null"></i></a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Rechercher">
-                <button class="btn btn-outline-secondary" type="submit">Rechercher</button>
+<div style="background-color: #cccccc; padding: 10px;">
+    <div>
+        <div class="d-flex">
+            <mat-toolbar style="background-color: #cccccc;">
+                <a class="navbar-brand" href="#">Mon Workshop</a>
+            </mat-toolbar>
+            <form role="search" class="search-form d-flex">
+                <mat-form-field>
+                    <input matInput class="form-control me-2" type="search" #searchInput placeholder="Rechercher">
+                </mat-form-field>
+                <button mat-raised-button [disabled]="searchInput.value.length > 0" class="btn btn-outline-secondary">Rechercher</button>
             </form>
         </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="nav-link" href="/" [attr.aria-current]="isAriaCurrentPage('/accueil') ? 'page' : null">Accueil</a>
+                <a class="nav-link" href="/page1" style="color: #999999;" [attr.aria-current]="isAriaCurrentPage('/page1') ? 'page' : null">Formulaire</a>
+                <a class="nav-link" href="/page2"><i class="bi bi-envelope" [attr.aria-current]="isAriaCurrentPage('/page2') ? 'page' : null"></i></a>
+            </div>
+        </nav>
+    </div>
 </div>
