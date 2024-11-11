@@ -1,0 +1,12 @@
+h1 {
+    margin: 0.5rem;
+}
+
+.form-group {
+    margin: 1rem;
+}
+
+.is-invalid {
+    border-color: red; /* Bordure rouge pour les champs invalides */
+    background-color: #f8d7da; /* Fond légèrement rouge */
+}

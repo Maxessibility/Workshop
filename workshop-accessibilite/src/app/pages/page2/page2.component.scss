@@ -1,0 +1,46 @@
+h1 {
+    padding: 0.5rem;
+}
+
+.contact-table {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1.25rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+  
+caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    text-align: center;
+    color: #333;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+td {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+}
+
+td:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+}

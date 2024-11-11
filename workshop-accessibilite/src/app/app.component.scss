@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+}
+
+footer-a11y {
+    color: white;
+    text-align: center;
+    width: 100%;
+}
