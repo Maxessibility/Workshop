@@ -1,50 +1,60 @@
-<div role="main-content">
-    <h1>Formulaire d'inscription</h1>
+<main>
+    <div>
+        <h1>Formulaire d'inscription</h1>
 
-    <form [formGroup]="formulaire" class="d-flex flex-column">
-
-        <!-- Signification * -->
-
-        <!-- Section Info Perso -->
-        <mat-form-field class="form-group">
-            <label for="name">Nom</label>
-            <input class="form-control" id="name" 
-            placeholder="Entrez votre nom" formControlName="name">
-        </mat-form-field>
-        <mat-form-field class="form-group">
-            <input class="form-control" id="email" 
-            placeholder="Entrez votre email" formControlName="email" 
-            [class.is-invalid]="email?.invalid && (email?.touched || email?.dirty)"
-            required>
-            <div *ngIf="email?.errors?.['required'] && email?.touched" class="alert alert-danger">L'email est obligatoire</div>
-            <div *ngIf="email?.errors?.['email']" class="alert alert-danger">Veuillez entrer un email valide</div>
-        </mat-form-field>
-
-        <!-- Section Info compte -->
-        <mat-form-field class="form-group">
-            <label for="username">Nom d'utilisateur *</label>
-            <input type="text" class="form-control" id="username" 
-            placeholder="Entrez votre nom d'utilisateur" formControlName="username" 
-            [class.is-invalid]="username?.invalid && (username?.touched || username?.dirty)"
-            >
-        </mat-form-field>
-
-        <mat-form-field class="form-group">
-            <label for="password">Mot de passe *</label>
-            <input class="form-control" id="password" 
-            placeholder="Entrez votre mot de passe" formControlName="password" 
-            [class.is-invalid]="password?.invalid && (password?.touched || password?.dirty)"
-            required>
-            <small>Le mot de passe doit contenir au moins 8 caractères</small>
-        </mat-form-field>
-
-        <div class="form-group">
-            <input tabindex="-1" type="checkbox" id="rememberMe">
-            <label for="rememberMe">Se souvenir de moi</label>
-        </div>
-
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Envoyer</button>
-        </div>
-    </form>
-</div>
+        <form [formGroup]="formulaire" class="d-flex flex-column">
+    
+            <!-- Signification * -->
+            <p class="px-4" aria-hidden="true">Les champs marqués du symbole "*" sont obligatoire</p>
+            <!-- Section Info Perso -->
+            <fieldset class="d-flex flex-column">
+                <legend>Informations personnelles</legend>
+                <mat-form-field class="form-group">
+                    <label for="name">Nom</label>
+                    <input class="form-control" id="name" 
+                    placeholder="Entrez votre nom" formControlName="name">
+                </mat-form-field>
+                <mat-form-field class="form-group">
+                    <label for="email">Email *</label>
+                    <input class="form-control" id="email" 
+                    placeholder="Entrez votre email" formControlName="email" 
+                    [class.is-invalid]="email?.invalid && (email?.touched || email?.dirty)"
+                    required>
+                    <div *ngIf="email?.errors?.['required'] && email?.touched" class="alert alert-danger">Erreur: L'email est obligatoire</div>
+                    <div *ngIf="email?.errors?.['email']" class="alert alert-danger">Erreur: Veuillez entrer un email valide</div>
+                </mat-form-field>
+            </fieldset>
+    
+            <!-- Section Info compte -->
+            <fieldset class="d-flex flex-column">
+                <legend>Informations personnelles</legend>
+                <mat-form-field class="form-group">
+                    <label for="username">Nom d'utilisateur *</label>
+                    <input type="text" class="form-control" id="username" 
+                    placeholder="Entrez votre nom d'utilisateur" formControlName="username" 
+                    [class.is-invalid]="username?.invalid && (username?.touched || username?.dirty)"
+                    >
+                </mat-form-field>
+    
+                <mat-form-field class="form-group">
+                    <label for="password">Mot de passe *</label>
+                    <input type="password" class="form-control" id="password" 
+                    placeholder="Entrez votre mot de passe" formControlName="password" 
+                    [class.is-invalid]="password?.invalid && (password?.touched || password?.dirty)"
+                    aria-labelledby="regle"
+                    required>
+                    <small id="regle" aria-hidden="true">Le mot de passe doit contenir au moins 8 caractères</small>
+                </mat-form-field>
+            </fieldset>
+    
+            <div class="form-group">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Se souvenir de moi</label>
+            </div>
+    
+            <div class="form-group">
+                <button type="submit" aria-label="Finir inscription" class="btn btn-primary">Envoyer</button>
+            </div>
+        </form>
+    </div>
+</main>
